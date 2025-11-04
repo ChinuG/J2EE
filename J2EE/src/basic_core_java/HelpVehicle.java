@@ -6,3 +6,4 @@ public class HelpVehicle {
 		return new Bike(); // UpCasted
 	}
 }
+
