@@ -5,13 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Scanner;
 
 public class PreparedStatement_FetchData {
 	private static String URL = "jdbc:postgresql://localhost:5432/qsp";
 	private static String name = "postgres";
 	private static String pass = "root";
-	private static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String args[])
 	{
@@ -47,3 +45,4 @@ public class PreparedStatement_FetchData {
 		}
 	}
 }
+
