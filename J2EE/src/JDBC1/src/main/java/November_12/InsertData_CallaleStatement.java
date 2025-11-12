@@ -56,10 +56,11 @@ public class InsertData_CallaleStatement {
 			con.close();
 //			System.out.println("Connection is Closed");)
 		}
-		catch(ClassNotFoundException | SQLException e)
+		catch(SQLException e)
 		{
 			e.printStackTrace();
 		}
 	}
 }
+
 
