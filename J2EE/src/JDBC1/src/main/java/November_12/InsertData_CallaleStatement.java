@@ -11,17 +11,29 @@ public class InsertData_CallaleStatement {
 	private static String name = "postgres";
 	private static String pass = "root";
 	private static Scanner sc = new Scanner(System.in);
+	private static Connection con;
+	static 
+	{
+		try 
+		{
+//			1st Step - Load Or Register the Driver
+			Class.forName("org.postgresql.Driver");
+			
+//			2nd Step - Create Connection.
+			con = DriverManager.getConnection(URL, name, pass);
+			System.out.println("Connected");
+		}
+		catch (ClassNotFoundException | SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		System.out.println("Driver is Loaded");
+		
+	}
 	public static void main(String args[])
 	{
 		try
 		{
-//			1st Step - Load Or Register the Driver
-			Class.forName("org.postgresql.Driver");
-			System.out.println("Driver is Loaded");
-			
-//			2nd Step - Create Connection.
-			Connection con = DriverManager.getConnection(URL, name, pass);
-			System.out.println("Connected");
 			
 //			3rd Step - 
 			CallableStatement cs = con.prepareCall("call insert_student(?,?,?)");
@@ -50,3 +62,4 @@ public class InsertData_CallaleStatement {
 		}
 	}
 }
+
